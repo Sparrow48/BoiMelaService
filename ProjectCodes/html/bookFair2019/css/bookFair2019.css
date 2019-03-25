@@ -1,0 +1,286 @@
+body
+{
+  margin: 0;
+  padding: 0;
+}
+.container1
+{
+  width: 70%;
+  margin:auto;
+}
+/* -----------------------------header area starts here---------------- */
+.header-area
+{
+
+}
+
+
+/* --------------------------logo area starts here---------------- */
+.header-area .logo-bar
+{
+  overflow: hidden;
+  padding: 10px 0;
+  border-bottom: 1px solid #dfe6e9;
+  overflow: hidden;
+
+}
+.header-area .logo-bar .logo
+{
+  float: left;
+  width: 40%;
+  text-align: center;
+
+}
+.header-area .logo-bar .logo a
+{
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.header-area .logo-bar .signin
+{
+  float: right;
+  width: 60%;
+
+
+}
+.header-area .logo-bar .signin button
+{
+  background-color: white;
+  padding: 5px 20px;
+}
+.header-area .logo-bar .signin button:hover
+{
+  background-color: #343A40;
+  color: white;
+}
+.header-area .logo-bar .signin a:last-child
+{
+  margin-right: 250px;
+}
+.header-area .logo-bar .signin .btn
+{
+  margin-left: 15px;
+  padding: 5px 20px;
+}
+.header-area .logo-bar .signin .fas
+{
+  font-size: 20px;
+
+}
+
+/* ----------------logo area ends here----------------------- */
+
+.menu-search
+{
+  border-bottom: 1px solid #dfe6e9;
+  padding: 10px 0;
+}
+.main-menu
+{
+
+  float: left;
+
+
+}
+
+.main-menu ul
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 300px;
+  z-index: 99999;
+}
+.main-menu ul li
+{
+  float: left;
+  position: relative;
+}
+.main-menu::after
+{
+  content: ' ';
+  display: block;
+  clear: both;
+}
+.main-menu ul li a
+{
+  display: block;
+  text-decoration: none;
+  color:#000;
+  padding: 5px 20px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  font-size: 15px;
+}
+.main-menu ul li:hover
+{
+  /* background-color: #8e44ad; */
+}
+/* creating sub menu */
+
+.main-menu ul ul
+{
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background: #F1F2F4;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+
+}
+.main-menu ul ul li
+{
+  float: none;
+  width: 150px;
+
+
+}
+
+.active
+{
+  font-weight: bold;
+}
+
+
+/* ------------search box ----------------- */
+.search
+{
+  text-align: center;
+  overflow: hidden;
+}
+.search input[type="text"]
+{
+  margin-left: 150px;
+  border-bottom: 1px solid grey;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  outline: none;
+  padding: 0 20px;
+}
+
+.search button[type="button"]
+{
+  margin-left: -30px;
+  border: none;
+  outline:none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.container1
+{
+  width: 90%;
+  margin: auto;
+}
+/* ---------------header area ends here---------------- */
+
+
+/* book list starts here */
+.humayunBooks
+{
+    margin-top: 20px;
+
+}
+.humayunBooks .humayunBio
+{
+  float: left;
+  width: 24%;
+  box-shadow: 0 0 5px;
+  margin-right: 20px;
+
+}
+.humayunBooks .humayunBio img
+{
+
+}
+.humayunBooks .humayunBio img
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 60%;
+}
+.humayunBooks .humayunBookList
+{
+    overflow: hidden;
+    width: 74%;
+    box-shadow: 0 0 5px;
+    padding-left: 1%;
+    margin:auto;
+}
+.humayunBooks .humayunBookList .title
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.humayunBooks .humayunBookList  .hbook2
+{
+    text-align: center;
+    /* width: 200px;
+    height: 400px; */
+
+}
+.humayunBooks .humayunBookList  .hbook2 a
+{
+    text-decoration: none;
+    color: #000;
+}
+.humayunBooks .humayunBookList  .hbook2 img
+{
+  width: 135px;
+  height: 190px;
+}
+.humayunBooks .humayunBookList  .hbook2 h5
+{
+    margin-top: 20px;
+    font-weight: bold;
+}
+.humayunBooks .humayunBookList  .hbook2 h5:hover
+{
+    color: #006064;
+
+
+}
+.humayunBooks .humayunBookList  .hbook2 a
+{
+  position: relative;
+}
+.humayunBooks .humayunBookList  .hbook2 a i
+{
+  position: absolute;
+  top: -50px;
+  right: -15px;
+  color: #000;
+  font-size: 20px;
+  background-color: white;
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 6px;
+  /* display: none; */
+}
+.humayunBooks .humayunBookList  .hbook2 a i:hover
+{
+  padding: 10px;
+  transition: 500ms;
+  transition-timing-function: ease-in-out;
+}
+/* .humayunBooks .humayunBookList  .hbook2 a img:hover .humayunBooks .humayunBookList  .hbook2 a i
+{
+  display: block;
+} */
+.humayunBooks .humayunBookList  .hbook2 a p
+{
+  margin-bottom: 5px;
+}
+.col-md-3
+{
+  margin-top: 20px !important;
+}
+
+/* book list ends here */
