@@ -1,0 +1,76 @@
+body
+{
+  padding: 0;
+  margin: 0;
+  outline: 0;
+}
+.homepage
+{
+  background-image: url('../img/home.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 939px;
+  opacity: 0.8;
+
+}
+.hompage .menu-area
+{
+
+}
+.homepage .menu-area a
+{
+  float: right;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  margin: 40px 60px;
+  background: #fff;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 500ms;
+}
+.homepage .menu-area a:hover
+{
+  color: #000;
+  margin: 40px 60px;
+  background: #fff;
+  padding: 14px 45px;
+  border-radius: 30px;
+  font-weight: bold;
+
+
+}
+.homepage .heading-area
+{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.homepage .heading-area h1
+{
+  color: #fff;
+  font-size: 45px;
+}
+.homepage .heading-area a
+{
+  text-decoration: none;
+
+  color: #000;
+  margin: 40px 60px 40px 0;
+  background: #fff;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 500ms;
+}
+.homepage .heading-area a:hover
+{
+  color: #000;
+  margin: 40px 60px 40px 0;
+  background: #fff;
+  padding: 14px 45px 14px 45px;
+  border-radius: 30px;
+  font-weight: bold;
+}

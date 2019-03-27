@@ -348,6 +348,23 @@ body
   font-size: 15px;
   padding-top: 10px;
 }
+.nbook1 .nbook1-content h5
+{
+  padding-top: 15px;
+
+  font-size: 20px;
+}
+.nbook1 .nbook1-content p
+{
+  font-weight: normal;
+  font-size: 15px;
+  padding-top: 10px;
+}
+.nbook1 .nbook1-content a
+{
+  text-decoration: none;
+  color: #000;
+}
 /* =======================================================
 ---new book list ends here-----
 ======================================================= */
@@ -396,6 +413,23 @@ body
 .jfbook1 .jfbook1-content
 {
   min-height: 305px;
+}
+.jfbook1 .jfbook1-content h5
+{
+  padding-top: 15px;
+
+  font-size: 20px;
+}
+.jfbook1 .jfbook1-content p
+{
+  font-weight: normal;
+  font-size: 15px;
+  padding-top: 10px;
+}
+.jfbook1 .jfbook1-content a
+{
+  text-decoration: none;
+  color: #000;
 }
 /* ----jafar iqbal books ends---- */
 
