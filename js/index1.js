@@ -35,7 +35,7 @@ jQuery(document).ready(function() {
 jQuery('.owl-carousel').owlCarousel({
   autoplay:true,
   loop:true,
-  items:6,
+  items:5,
   margin:10,
   autoplayHoverPause:true
 
