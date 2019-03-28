@@ -6,10 +6,10 @@ body
 }
 .homepage
 {
-  /* background-image: url('../img/home.jpg');
+  background-image: url('../img/home2.jpg');
   background-repeat: no-repeat;
-  background-size: cover; */
-  background-color: #212121;
+  background-size: cover;
+  /* background-color: #212121; */
   height: 939px;
   /* opacity: 0.8; */
 
