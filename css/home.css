@@ -1,8 +1,18 @@
+@font-face {
+  font-family: 'MinaBold';
+  src: url(../customFonts/Mina-Bold.ttf);
+}
+@font-face {
+  font-family: 'amarbangla';
+  src: url(../customFonts/AmarBangla.ttf);
+  font-weight: bold;
+}
 body
 {
   padding: 0;
   margin: 0;
   outline: 0;
+  font-family: amarbangla;
 }
 .homepage
 {
@@ -50,6 +60,24 @@ body
 {
   /* border-bottom: 1px solid #fff; */
 }
+
+.homepage .logo-area .logo
+{
+    float: left;
+    position: absolute;
+    top: 40px;
+    left: 310px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: MinaBold;
+    font-size: 35px;
+    color: #E91E63;
+
+}
+.homepage .logo-area .logo small
+{
+  font-size: 12px;
+}
 .homepage .menu-area a
 {
   float: right;
@@ -62,6 +90,9 @@ body
   border-radius: 30px;
   font-weight: bold;
   transition: 500ms;
+  
+
+
 }
 .homepage .menu-area a:hover
 {
@@ -70,7 +101,8 @@ body
   background: #fff;
   padding: 14px 45px;
   border-radius: 30px;
-  font-weight: bold;
+  /* font-weight: bold; */
+
 
 
 }
@@ -83,7 +115,7 @@ body
 }
 .homepage .heading-area h1
 {
-  color: #fff;
+  color: #E91E63;
   font-size: 45px;
 }
 .homepage .heading-area a

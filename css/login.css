@@ -76,7 +76,7 @@ body
 .main input::placeholder
 {
   color: #37474F;
-  text-align: center;
+  /* text-align: center; */
   opacity: 0.7;
 }
 .main .form-footer
