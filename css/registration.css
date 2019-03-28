@@ -1,20 +1,34 @@
+@font-face {
+  font-family: 'MinaBold';
+  src: url(../customFonts/Mina-Bold.ttf);
+}
+@font-face {
+  font-family: 'amarbangla';
+  src: url(../customFonts/AmarBangla.ttf);
+  font-weight: bold;
+}
 body
 {
   margin:0;
   padding: 0;
   background-image: url('../img/reg-back2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: amarbangla;
 }
-/* .box
+.logo-area a
 {
-  height: 300px;
-  width: 1000px;
-  background-color: #FAFAFA;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 5px;
-  transform: translate(-50%,-50%);
-} */
+  text-decoration: none;
+    margin: 35px 300px;
+    display: inline-block;
+    font-size: 35px;
+    color: #fff;
+    font-family: MinaBold;
+}
+.logo-area a small
+{
+  font-size: 12px;
+}
 .main
 {
   /* height: 500px;
@@ -71,7 +85,7 @@ body
   margin-top: 25px;
   background-color: #212121;
   padding: 16px 0;
-  border-radius: 7px;
+  /* border-radius: 7px; */
 }
 .main .form-footer  a
 {

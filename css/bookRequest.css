@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'MinaBold';
+  src: url(../customFonts/Mina-Bold.ttf);
+}
+@font-face {
+  font-family: 'amarbangla';
+  src: url(../customFonts/AmarBangla.ttf);
+  font-weight: bold;
+}
+body
+{
+  margin: 0;
+  padding: 0;
+  background-image: url('../img/reg-back2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+.logo-area a
+{
+  text-decoration: none;
+    margin: 35px 300px;
+    display: inline-block;
+    font-size: 35px;
+    color: #fff;
+    font-family: MinaBold;
+}
+.logo-area a small
+{
+  font-size: 12px;
+}
+.form-area
+{
+  background-color: #fff;
+  display: inline-block;
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  transform: translate(-50%,-50%);
+  padding: 40px;
+
+}
+.form-area .left-form
+{
+  float: left;
+  margin-right: 60px;
+border-right: 1px solid #000;
+padding-right: 70px;
+
+}
+.form-area .form-header
+{
+  text-align: center;
+}
+.form-area .form-header h3
+{
+
+  margin-bottom: 30px;
+  border-bottom: 1px solid red;
+  display: inline-block;
+  padding-bottom: 10px;
+  font-family: amarbangla;
+  font-weight: bold;
+
+}
+.form-area .left-form input
+{
+  display: block;
+  margin: 20px 20px;
+  padding: 8px 50px;
+  border-radius: 35px;
+  border: 1px solid #000;
+
+
+}
+.form-area .right-form
+{
+  overflow: hidden;
+}
+.form-area .right-form input
+{
+  display: block;
+  margin: 20px 20px;
+  padding: 8px 50px;
+  border-radius: 35px;
+  border: 1px solid #000;
+}
+.form-area .right-form input[type="submit"]
+{
+  background-color: #E91E63;
+  color: #fff;
+  transition: 300ms;
+  border: 1px solid #fff;
+}
+.form-area .right-form input[type="submit"]:hover
+{
+  background-color: #000;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+}
+.form-area .left-form input::placeholder,.right-form input::placeholder
+{
+  color: #E91E63;
+  font-size: 15px;
+
+}
