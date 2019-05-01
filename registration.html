@@ -18,14 +18,14 @@
   <link rel="stylesheet" href="css/registration.css">
 
   <!-- --------------js files---------------- -->
-
+  <script src="registrationjs.js"></script>
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/custom.js"></script>
   <script src="js/customJ.js"></script>
 </head>
-<body>
+<body onload="document.registration.userid.focus();">
 
   <div class="logo-area">
     <a href="">বইমেলা<small>2019</small></a>
@@ -37,12 +37,13 @@
             <h1 class="text-center text-dark">Register</h1>
             <form action="#">
               <div class="form-input">
-                <input type="text" placeholder="Enter Your Fullname" Name="fullname">
-                <input type="text" placeholder="Enter Your Username" Name="username">
+
+                <input type="text" placeholder="Enter Your Fullname" Name="username">
+                <input type="text" placeholder="Enter Your User ID" Name="userid">
                 <input type="email" placeholder="Enter Your Email" Name="email">
 
-                <input type="password" placeholder="Enter your Password" Name="password">
-                <input type="password" placeholder="Confirm your Password" Name="comfirmpassword">
+                <input type="password" placeholder="length of 7 to 12" Name="passid" size="12"/>
+              
               </div>
 			   <input class="btn btn-outline-dark " type="submit"  value="Register">
 			  
