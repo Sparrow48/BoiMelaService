@@ -38,7 +38,11 @@ mongoose.connection
 
   const bookRoute = require("./routes/Book/index");
   app.use('/', bookRoute);
-  app.use('/api/addbook', userRoute);
+  app.use('/api/addbook', bookRoute);
+
+  const authorRoute = require("./routes/Author/index");
+  app.use('/', authorRoute);
+  app.use('/api/addauthor', authorRoute);
   
 
   app.listen( port ); 

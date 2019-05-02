@@ -10,24 +10,7 @@ router.use(function(req,res,next) {
 })
 
 router.get("/", (req, res) => {
-    res.send([
-      {
-        id: 0,
-        title: 'Lorem ipsum',
-        content: 'Dolor sit amet',
-        author: 'Marcin'
-      },
-      {
-        id: 1,
-        title: 'Vestibulum cursus',
-        content: 'Dante ut sapien mattis',
-        author: 'Marcin'
-      }
-    ]);
-  });
-
-  router.post("/post", (req, res) => {
-    res.send(req.body);
+  res.send({hello: "hellow world"})
   });
 
   router.post("/api/addbook",(req,res) =>{
@@ -35,7 +18,7 @@ router.get("/", (req, res) => {
           bookName: req.body.bookName,
           price: req.body.price,
           picture: req.body.picture,
-          authors: req.body.author,
+          authors: req.body.authors,
           authorUsername: req.body.authorUsername,
           stallnumber: req.body.stallnumber
 
@@ -57,5 +40,36 @@ router.get("/", (req, res) => {
       console.log(err);
     });
   });
+
+  router.get("/api/books", (req, res) => {
+    Book.find({}).populate({
+      path: "authors",
+      model: "Author"
+    }).then((result) => {
+      if(!result) {
+        res.send({error: "Can't resolve"});
+      } else {
+        res.send(result);
+      }
+    }).catch((err) => {
+      console.log(err);
+    });
+    });
+
+    router.get("/api/book/:bookid", (req, res) => {
+      Book.findById({_id: req.params.bookid}).populate({
+        path: "authors",
+        model: "Author"
+      }).then((result) => {
+          if(!result) {
+            res.send({error: "Can't found"});
+          } else {
+            res.send(result);
+          }
+      
+      }).catch((err) => {
+        console.log(err);
+      });
+    })
 
   module.exports = router;
