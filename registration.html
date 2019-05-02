@@ -1,67 +1,31 @@
-
-
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Nayeem, Nasib, Iffat, Ilias">
-
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Registration</title>
-
-<!-- -----------css files--------------- -->
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-  <link rel="stylesheet" href="css/all.min.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/registration.css">
-
-  <!-- --------------js files---------------- -->
-  <script src="registrationjs.js"></script>
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/custom.js"></script>
-  <script src="js/customJ.js"></script>
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>JavaScript Form Validation using a sample registration form</title>
+<meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
+<meta name="description" content="This document is an example of JavaScript Form Validation using a sample registration form. " />
+<link rel='stylesheet' href='cs/registrationtestcss.css' type='text/css' />
+<script src="js/registrationjs.js"></script>
 </head>
 <body onload="document.registration.userid.focus();">
+<h1>Registration</h1>
+Use tab keys to move from one input field to the next.
+<form name='registration' onSubmit="return formValidation();">
+<ul>
+<li><label for="userid">User id:</label></li>
+<li><input type="text" name="userid" size="12" /></li>
+<li><label for="passid">Password:</label></li>
+<li><input type="password" name="passid" size="12" /></li>
+<li><label for="username">Name:</label></li>
+<li><input type="text" name="username" size="50" /></li>
+<li><label for="email">Email:</label></li>
+<li><input type="text" name="email" size="50" /></li>
 
-  <div class="logo-area">
-    <a href="">বইমেলা<small>2019</small></a>
-  </div>
-        <div class="main">
-
-
-          <div class="loginForm">
-            <h1 class="text-center text-dark">Register</h1>
-            <form action="#">
-              <div class="form-input">
-
-                <input type="text" placeholder="Enter Your Fullname" Name="username">
-                <input type="text" placeholder="Enter Your User ID" Name="userid">
-                <input type="email" placeholder="Enter Your Email" Name="email">
-
-                <input type="password" placeholder="length of 7 to 12" Name="passid" size="12"/>
-              
-              </div>
-			   <input class="btn btn-outline-dark " type="submit"  value="Register">
-			  
-
-               
-
-
-
-
-
-
-            </form>
-          </div>
-          <div class="form-footer">
-            <a href="login.html">Login With An Existing Account.</a>
-          </div>
-
-        </div>
-
+<li><input type="submit" name="submit" value="Submit" /></li>
+</ul>
+</form>
 </body>
 </html>
