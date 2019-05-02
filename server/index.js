@@ -36,5 +36,10 @@ mongoose.connection
   app.use('/api/signin', userRoute);
   
 
+  const bookRoute = require("./routes/Book/index");
+  app.use('/', bookRoute);
+  app.use('/api/addbook', userRoute);
+  
+
   app.listen( port ); 
   

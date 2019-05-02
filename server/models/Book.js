@@ -19,7 +19,11 @@ const bookSchema = new mongoose.Schema({
     authorUsername: [{
         type: String,
         require: true
-    }]
+    }],
+    stallnumber:{
+        type: Number,
+        required: true
+    }
 
 })
   bookSchema.index({
