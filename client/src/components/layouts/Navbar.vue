@@ -1,25 +1,24 @@
 <template>
-  <v-app>
-    <v-toolbar flat>
-      <v-toolbar-title @click="goHome" style="cursor:pointer">বইমেলা</v-toolbar-title>
+  <div>
+    <v-toolbar flat border-bottom="1px solid #000">
+      <v-toolbar-title @click="goIndex" style="cursor:pointer">বইমেলা</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat @click="goSignin">Sign in</v-btn>
+        <v-btn flat @click="goSignin" class="indigo darken-4 white--text">Sign in</v-btn>
         <v-btn flat @click="goSignup">Sign Up</v-btn>
       </v-toolbar-items>
     </v-toolbar>
 
-    <v-toolbar flat class="borderStyle">
+    <v-toolbar flat>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-toolbar-items text-transform="capitalize" class="hidden-sm-and-down">
         <v-btn flat @click="goIndex">Home</v-btn>
         <v-btn flat @click="goAuthor">Authors</v-btn>
         <v-btn flat @click="goPublisher">Publishers</v-btn>
         <v-btn flat @click="goFair">Book Fair 2019</v-btn>
-        <!-- <v-btn flat @click="go">Sign Up</v-btn> -->
       </v-toolbar-items>
     </v-toolbar>
-  </v-app>
+  </div>
 </template>
 
 <script>
@@ -48,8 +47,7 @@ export default {
 </script>
 
 <style scoped>
-.borderStyle {
-  border: 1px solid #000;
-  text-transform: capitalize;
-}
+/* .borderStyle {
+  border: 1px solid rgb(15, 15, 15);
+} */
 </style>
