@@ -3,11 +3,16 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const path = require('path');
 const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
 
+//* JWT token generating here
+const createToken = (user, secret, expiresIn) => {
+  const { userName, email, status } = user;
+  return jwt.sign({ userName, email, status }, secret, { expiresIn: "30d" });
+};
 
 const User = require('../../models/User');
 router.use(function (req, res, next) {
-    //console.log('Time:', Date.now())
     next()
 })
 
@@ -32,7 +37,7 @@ router.get("/", (req, res) => {
     res.send(req.body);
   });
 
-router.post("/signup", (req, res) => {
+router.post("/api/signup", (req, res) => {
     const user = new User ({
         username: req.body.username,
         name: req.body.name,
@@ -57,7 +62,7 @@ router.post("/signup", (req, res) => {
     });
 });
 
-router.post("/signin", (req, res) => {
+router.post("/api/signin", (req, res) => {
   User.findOne({username: req.body.username})
   .then((result) => {
     if (!result) {
@@ -66,7 +71,8 @@ router.post("/signin", (req, res) => {
       bcrypt.compare(req.body.password, result.password, (err, matched) => {
         if (err) return err;
         if (matched) {
-          res.send(result);
+          res.send({ token: createToken(result, process.env.SECRET) });
+
         } else {
           res.send({error: "Incorrect password"});
         }
@@ -74,7 +80,7 @@ router.post("/signin", (req, res) => {
     }
 
   }).catch((err) => {
-    
+    console.log(err);
   });
 })
 module.exports = router;

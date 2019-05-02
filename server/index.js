@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
 var bodyParser = require("body-parser");
 var cookieParser = require('cookie-parser')
 const app = express();
@@ -33,8 +32,8 @@ mongoose.connection
   
   const userRoute = require("./routes/User/index");
   app.use('/', userRoute);
-  app.use("/signup", userRoute);
-  app.use('/signin', userRoute);
+  app.use("/api/signup", userRoute);
+  app.use('/api/signin', userRoute);
   
 
   app.listen( port ); 
