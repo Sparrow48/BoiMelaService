@@ -29,6 +29,12 @@ mongoose.connection
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
   });
+
+  
+  const userRoute = require("./routes/User/index");
+  app.use('/', userRoute);
+  app.use("/signup", userRoute);
+  app.use('/signin', userRoute);
   
 
   app.listen( port ); 

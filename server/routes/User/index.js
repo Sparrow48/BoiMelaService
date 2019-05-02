@@ -33,7 +33,6 @@ router.get("/", (req, res) => {
   });
 
 router.post("/signup", (req, res) => {
-    console.log("hello from signup");
     const user = new User ({
         username: req.body.username,
         name: req.body.name,
@@ -41,12 +40,41 @@ router.post("/signup", (req, res) => {
         email: req.body.email
     });
 
-    user.save().then((result) => {
-      console.log(result);
-    }).catch((err) => {
-      
+    User.findOne({ username: req.body.username})
+    .then((result) => {
+      if (result != null && result.username == req.body.username) { 
+        res.send({error: "This username already exist"});
+      } else {
+        user.save().then((result) => {
+          res.send({success: "Sign up successful"});
+        }).catch((err) => {
+          console.log(err);
+        });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
     });
-    res.send(user);
 });
 
+router.post("/signin", (req, res) => {
+  User.findOne({username: req.body.username})
+  .then((result) => {
+    if (!result) {
+      res.send({error: "User not found!"});
+    } else {
+      bcrypt.compare(req.body.password, result.password, (err, matched) => {
+        if (err) return err;
+        if (matched) {
+          res.send(result);
+        } else {
+          res.send({error: "Incorrect password"});
+        }
+      });
+    }
+
+  }).catch((err) => {
+    
+  });
+})
 module.exports = router;
