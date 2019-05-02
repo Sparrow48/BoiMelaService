@@ -43,6 +43,10 @@ mongoose.connection
   const authorRoute = require("./routes/Author/index");
   app.use('/', authorRoute);
   app.use('/api/addauthor', authorRoute);
+
+  const searchRoute = require("./routes/Search/index");
+  app.use("/", searchRoute);
+  app.use("/api/search", searchRoute);
   
 
   app.listen( port ); 
