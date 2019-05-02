@@ -43,6 +43,39 @@ router.get("/", (req, res) => {
     });
   });
 
-
   
+  router.get("/api/authors", (req, res) => {
+    Author.find({}).populate({
+      path: "createdBy",
+      model: "User"
+    }).then((result) => {
+      if(!result) {
+        res.send({error: "Can't resolve"});
+      } else {
+        res.send(result);
+      }
+    }).catch((err) => {
+      console.log(err);
+    });
+    });
+
+    router.get("/api/author/:username", (req, res) => {
+      Author.findOne({username: req.params.username}).populate({
+        path: "createdBy",
+        model: "User"
+      }).then((result) => {
+          if(!result) {
+            res.send({error: "Can't found"});
+          } else {
+            res.send(result);
+          }
+      
+      }).catch((err) => {
+        console.log(err);
+      });
+    })
+
+
+
+
   module.exports = router;
