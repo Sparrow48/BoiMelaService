@@ -1,13 +1,13 @@
 <template>
   <div>
-    <Signin/>
+    <NewBooks/>
   </div>
 </template>
 <script>
-import Signin from "@/components/Signin";
+import NewBooks from "@/components/NewBooks";
 export default {
   components: {
-    Signin
+    NewBooks
   }
 };
 </script>

@@ -4,15 +4,15 @@
       <v-toolbar-title @click="goIndex" style="cursor:pointer">বইমেলা</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat @click="goSignin" class="indigo darken-4 white--text">Sign in</v-btn>
+        <v-btn flat @click="goSignin" class="indigo darken-4 white--text text-capitalize">Sign in</v-btn>
         <v-btn flat @click="goSignup">Sign Up</v-btn>
       </v-toolbar-items>
     </v-toolbar>
 
     <v-toolbar flat>
       <v-spacer></v-spacer>
-      <v-toolbar-items text-transform="capitalize" class="hidden-sm-and-down">
-        <v-btn flat @click="goIndex">Home</v-btn>
+      <v-toolbar-items class="hidden-sm-and-down text-capitalize">
+        <v-btn flat @click="goNewBooks">Add Books</v-btn>
         <v-btn flat @click="goAuthor">Authors</v-btn>
         <v-btn flat @click="goPublisher">Publishers</v-btn>
         <v-btn flat @click="goFair">Book Fair 2019</v-btn>
@@ -41,6 +41,9 @@ export default {
     },
     goIndex() {
       this.$router.push("/Index");
+    },
+    goNewBooks() {
+      this.$router.push("/NewBooks");
     }
   }
 };
