@@ -6,7 +6,7 @@
 import NewBooks from "/NewBooks.vue";
 export default {
   components: {
-    // NewBooks
+    NewBooks
   }
 };
 </script>

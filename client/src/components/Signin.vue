@@ -37,7 +37,11 @@
 
                   <v-layout>
                     <v-flex xs12>
-                      <v-btn color="pink darken-1 white--text" type="submit">Sign Up</v-btn>
+                      <v-btn
+                        color="pink darken-1 white--text"
+                        type="submit"
+                        @click="addToApi"
+                      >Sign In</v-btn>
                     </v-flex>
                   </v-layout>
                 </form>
@@ -51,7 +55,42 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+      nameRules: [
+        username => !!username || "Username is required",
+        username => username.length >= 6 || "Minimum Length is 6 character"
+      ],
+      passRules: [
+        password => !!password || "Full Name is required",
+        password => password.length >= 6 || "Minimum Length is 6 character"
+      ]
+    };
+  },
+  methods: {
+    /* eslint-disable */
+    addToApi() {
+      var newSignin = {
+        username: this.username,
+
+        password: this.password
+      };
+      console.log(newSignin);
+      axios
+        .post("http://localhost:3000/api/signin", newSignin)
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }
+};
 </script>
 
 <style>

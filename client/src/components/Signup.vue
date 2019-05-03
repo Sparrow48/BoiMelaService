@@ -17,6 +17,7 @@
                         id="username"
                         v-model="username"
                         type="username"
+                        prepend-icon="account_circle"
                         required
                         :rules="nameRules"
                       ></v-text-field>
@@ -31,6 +32,7 @@
                         id="name"
                         v-model="name"
                         type="name"
+                        prepend-icon="account_box"
                         :rules="fullNameRules"
                       ></v-text-field>
                     </v-flex>
@@ -44,6 +46,7 @@
                         id="password"
                         v-model="password"
                         type="password"
+                        prepend-icon="lock"
                         :rules="passRules"
                       ></v-text-field>
                     </v-flex>
@@ -57,6 +60,7 @@
                         id="email"
                         v-model="email"
                         type="email"
+                        prepend-icon="email"
                         required
                       ></v-text-field>
                     </v-flex>
@@ -64,7 +68,11 @@
 
                   <v-layout>
                     <v-flex xs12>
-                      <v-btn color="pink darken-1 white--text" type="submit">Sign Up</v-btn>
+                      <v-btn
+                        color="pink darken-1 white--text"
+                        type="submit"
+                        @click="addToApi"
+                      >Sign Up</v-btn>
                     </v-flex>
                   </v-layout>
                 </form>
@@ -78,6 +86,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -98,6 +107,26 @@ export default {
         password => password.length >= 6 || "Minimum Length is 6 character"
       ]
     };
+  },
+  methods: {
+    /* eslint-disable */
+    addToApi() {
+      var newAccount = {
+        username: this.username,
+        name: this.name,
+        password: this.password,
+        email: this.email
+      };
+      console.log(newAccount);
+      axios
+        .post("http://localhost:3000/api/signup", newAccount)
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
   }
 };
 </script>

@@ -11,9 +11,9 @@
       <v-layout row wrap>
         <v-flex md4 lg3>
           <v-card>
-            <v-img>src</v-img>
+            <v-img></v-img>
             <v-card-text>
-              <div class="subheading">{{}}</div>
+              <div class="subheading"></div>
             </v-card-text>
           </v-card>
         </v-flex>
