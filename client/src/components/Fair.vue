@@ -26,18 +26,17 @@
 <script>
 import axios from "axios";
 export default {
-  name: "user",
   data() {
     return {
       bookDetails: []
     };
   },
-
+  components: {},
   mounted() {
     axios
-      .get("http://localhost:3000/api/books")
+      .get("http://localhost:3000/api/boook")
       .then(response => {
-        console.log(response);
+        console.log(response.data);
         this.bookDetails = response.data;
       })
       .catch(error => {
