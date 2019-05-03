@@ -158,12 +158,14 @@ export default {
       };
       console.log(newBook);
       axios
-        .post("https://boimela-backend.herokuapp.com/api/addbook")
+        .post("https://boimela-backend.herokuapp.com/api/addbook", {
+          book: this.newBook
+        })
         .then(response => {
-          console.log(response);
+          console.log(response.addToApi);
         })
         .catch(error => {
-          console.log(response);
+          console.log(error);
         });
     }
   }
