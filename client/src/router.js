@@ -48,6 +48,11 @@ export default new Router({
       component: () => import('./views/NewBooks.vue')
     },
     {
+      path: '/search',
+      name: 'search',
+      component: () => import('./views/Search.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
