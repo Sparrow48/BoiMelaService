@@ -12,7 +12,7 @@
                     <v-flex xs12>
                       <v-text-field
                         name="username"
-                        label="Username"
+                        label="Enter Value"
                         id="username"
                         v-model="username"
                         type="username"
