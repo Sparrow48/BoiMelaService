@@ -17,8 +17,8 @@
                         id="bookName"
                         v-model="bookName"
                         type="bookName"
-                        required="true"
-                        :rules="bookNameRules"
+                      
+                        
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -31,8 +31,8 @@
                         id="price"
                         v-model="price"
                         type="number"
-                        :rules="priceRules"
-                        required="true"
+                        
+                        
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -45,8 +45,8 @@
                         id="picture"
                         v-model="picture"
                         type="text"
-                        :rules="pictureRules"
-                        required="true"
+                        
+                        
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -59,8 +59,8 @@
                         id="authors"
                         v-model="authors"
                         type="text"
-                        :rules="authorRules"
-                        required
+                        
+                        
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -72,9 +72,9 @@
                         label="Author Username"
                         id="authorUsername"
                         v-model="authorUsername"
-                        type="text"
-                        :rules="authorUsernameRules"
-                        required
+                        type="string"
+                        
+                    
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -87,8 +87,7 @@
                         id="stallnumber"
                         v-model="stallnumber"
                         type="number"
-                        :rules="stallnumberRules"
-                        required
+                        
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -119,30 +118,6 @@ export default {
       authors: "",
       authorUsername: "",
       stallnumber: "",
-
-      bookNameRules: [
-        bookName => !!bookName || "Book Name is required",
-        bookName => bookName.length >= 6 || "Minimum Length is 6 character"
-      ],
-      priceRules: [
-        price => !!price || "Price is required",
-        price => price.length >= 1 || "Minimum Length is 1 character"
-      ],
-      pictureRules: [picture => !!picture || "Picture is required"],
-      authorRules: [
-        authors => !!authors || "Picture is required",
-        authors => authors.length >= 4 || "Minimum Length is 4 character"
-      ],
-      authorUsernameRules: [
-        authorsUsername => !!authorsUsername || "Username is required",
-        authorsUsername =>
-          authorsUsername.length >= 4 || "Minimum Length is 4 character"
-      ],
-      stallnumberRules: [
-        stallnumber => !!stallnumber || "Picture is required",
-        stallnumber =>
-          stallnumber.length >= 1 || "Minimum Length is 1 character"
-      ]
     };
   },
   methods: {
@@ -156,9 +131,9 @@ export default {
         authorUsername: this.authorUsername,
         stallnumber: this.stallnumber
       };
-      console.log(newBook);
+      //console.log(newBook);
       axios
-        .post("https://boimela-backend.herokuapp.com/api/addbook", {
+        .post("http://localhost:3000/api/addbook", {
           book: this.newBook
         })
         .then(response => {

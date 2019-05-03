@@ -1,0 +1,42 @@
+<template>
+  <div>
+    <button @click="get">get</button>
+    <button @click="post">post</button>
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+export default {
+  name: "HelloWorld",
+  data() {
+      return {
+        postBody: {
+          id: 1,
+          title: 'GG',
+          content: 'Dante ut sapien mattis',
+          author: 'Marcin'
+      }
+      }
+    },
+  methods: {
+    
+    get() {
+      axios
+      .get("https://server-bookshelf.herokuapp.com/")
+      .then (response => {
+        console.log(response.data);
+      });
+    },
+    post() {
+      console.log("Post body:", this.postBody);
+      axios
+      .post("https://server-bookshelf.herokuapp.com/post", {
+        body : this.postBody
+      }).then(response => {
+        console.log(response.data);
+      })
+    }
+  }
+};
+</script>
