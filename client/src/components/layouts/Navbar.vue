@@ -12,7 +12,15 @@
     <v-toolbar flat>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down text-capitalize">
-        <v-text-field prepend-icon="search"></v-text-field>
+        <v-text-field
+          prepend-icon="search"
+          v-model="searchInput"
+          @input="handleSearch"
+          flex
+          :placeholder="text"
+          color="primary"
+          single-line-hide-details
+        ></v-text-field>
         <v-btn flat @click="goNewBooks">Add Books</v-btn>
         <v-btn flat @click="goAuthor">Authors</v-btn>
         <v-btn flat @click="goPublisher">Publishers</v-btn>
