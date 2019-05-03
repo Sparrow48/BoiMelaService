@@ -17,8 +17,6 @@
                         id="bookName"
                         v-model="bookName"
                         type="bookName"
-                      
-                        
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -31,8 +29,6 @@
                         id="price"
                         v-model="price"
                         type="number"
-                        
-                        
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -45,8 +41,6 @@
                         id="picture"
                         v-model="picture"
                         type="text"
-                        
-                        
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -59,8 +53,6 @@
                         id="authors"
                         v-model="authors"
                         type="text"
-                        
-                        
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -73,8 +65,6 @@
                         id="authorUsername"
                         v-model="authorUsername"
                         type="string"
-                        
-                    
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -87,14 +77,17 @@
                         id="stallnumber"
                         v-model="stallnumber"
                         type="number"
-                        
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
 
                   <v-layout>
                     <v-flex xs12>
-                      <v-btn color="pink darken-1 white--text" @click="addToApi">Add Book</v-btn>
+                      <v-btn
+                        color="pink darken-1 white--text"
+                        type="submit"
+                        @click="addToApi"
+                      >Add Book</v-btn>
                     </v-flex>
                   </v-layout>
                 </form>
@@ -117,7 +110,7 @@ export default {
       picture: "",
       authors: "",
       authorUsername: "",
-      stallnumber: "",
+      stallnumber: ""
     };
   },
   methods: {
@@ -125,19 +118,17 @@ export default {
     addToApi() {
       var newBook = {
         bookName: this.bookName,
-        price: parseInt(this.price),
+        price: this.price,
         picture: this.picture,
         authors: this.authors,
         authorUsername: this.authorUsername,
         stallnumber: this.stallnumber
       };
-      //console.log(newBook);
+      console.log(newBook);
       axios
-        .post("http://localhost:3000/api/addbook", {
-          book: this.newBook
-        })
+        .post("http://localhost:3000/api/addbook", newBook)
         .then(response => {
-          console.log(response.addToApi);
+          console.log(response);
         })
         .catch(error => {
           console.log(error);
