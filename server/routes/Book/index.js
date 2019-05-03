@@ -23,8 +23,6 @@ router.post('/api/addbook', (req, res) => {
     stallnumber: req.body.stallnumber
   });
 
-  console.log(book);
-
   Book.findOne({ bookName: req.body.bookName })
     .then(result => {
       if (result != null && result.bookName == req.body.bookName) {
@@ -45,23 +43,20 @@ router.post('/api/addbook', (req, res) => {
     });
 });
 
-router.get('/api/books', (req, res) => {
-  Book.find({})
-    .populate({
-      path: 'authors',
-      model: 'Author'
-    })
-    .then(result => {
-      if (!result) {
-        res.send({ error: "Can't resolve" });
-      } else {
-        res.send(result);
-      }
-    })
-    .catch(err => {
-      console.log(err);
-    });
-});
+router.get("/api/books", (req, res) => {
+  Book.find({}).populate({
+    path: "authors",
+    model: "Author"
+  }).then((result) => {
+    if(!result) {
+      res.send({error: "Can't resolve"});
+    } else {
+      res.send(result);
+    }
+  }).catch((err) => {
+    console.log(err);
+  });
+  });
 
 router.get('/api/book/:bookid', (req, res) => {
   Book.findById({ _id: req.params.bookid })
@@ -81,4 +76,14 @@ router.get('/api/book/:bookid', (req, res) => {
     });
 });
 
+
+router.get('/api/boook',(req,res) =>{
+  Book.find().then((books)=>{
+    res.send(books);
+
+  }).catch((err)=>{
+    
+  });
+
+});
 module.exports = router;

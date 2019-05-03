@@ -39,6 +39,7 @@ mongoose.connection
   const bookRoute = require("./routes/Book/index");
   app.use('/', bookRoute);
   app.use('/api/addbook', bookRoute);
+  app.use('/api/books',bookRoute);
 
   const authorRoute = require("./routes/Author/index");
   app.use('/', authorRoute);
@@ -47,7 +48,6 @@ mongoose.connection
   const searchRoute = require("./routes/Search/index");
   app.use("/", searchRoute);
   app.use("/api/search", searchRoute);
-  
 
   app.listen( port ); 
   
