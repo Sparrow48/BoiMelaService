@@ -3,9 +3,8 @@ function formValidation()
 var uid = document.registration.userid;
 var passid = document.registration.passid;
 var uname = document.registration.username;
-var uadd = document.registration.address;
 var uemail = document.registration.email;
- if(userid_validation(uid,5,12))
+if(userid_validation(uid,5,12))
 {
 if(passid_validation(passid,7,12))
 {
